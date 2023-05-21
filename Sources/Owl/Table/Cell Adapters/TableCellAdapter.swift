@@ -189,15 +189,10 @@ open class TableCellAdapter<Model: ElementRepresentable, Cell: ReusableViewProto
 			return events.canFocus?(TableCellAdapter.Event(item: model, cell: cell, indexPath: path))
 			
 		case .leadingSwipeActions:
-			if #available(iOS 11, *) {
-				return events.leadingSwipeActions?(TableCellAdapter.Event(item: model, cell: cell, indexPath: path))
-			}
+			break
 			
 		case .trailingSwipeActions:
-			if #available(iOS 11, *) {
-				return events.trailingSwipeActions?(TableCellAdapter.Event(item: model, cell: cell, indexPath: path))
-			}
-
+            break
 		}
 
 		return nil
